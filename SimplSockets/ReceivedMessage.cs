@@ -11,11 +11,8 @@ namespace SimplSockets
     /// </summary>
     public class ReceivedMessage
     {
-        internal Socket Socket;
-        internal int ThreadId;
-        /// <summary>
-        /// The connection's GUID.
-        /// </summary>
+        public Socket Socket;
+        public int ThreadId;
         public Guid Guid { get; set; }
         /// <summary>
         /// The message bytes.

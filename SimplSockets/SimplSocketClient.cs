@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.Caching;
-using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -279,7 +277,7 @@ namespace SimplSockets
                 // Ignore
             }
 
-            _socket.Close();
+            _socket.Dispose();
 
             // No longer connected
             _isConnected = false;
@@ -301,7 +299,7 @@ namespace SimplSockets
         public void Dispose()
         {
             // Close/dispose the socket
-            _socket.Close();
+            _socket.Dispose();
         }
 
         private void KeepAlive(Socket socket)
@@ -609,7 +607,7 @@ namespace SimplSockets
                 }
 
                 // Close / dispose the socket
-                socket.Close();
+                socket.Dispose();
             }
 
             // No longer connected

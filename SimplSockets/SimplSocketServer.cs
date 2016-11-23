@@ -383,7 +383,7 @@ namespace SimplSockets
                 // Ignore
             }
 
-            _socket.Close();
+            _socket.Dispose();
 
             // Dump all clients
             var clientList = new List<ConnectedClient>();
@@ -441,7 +441,7 @@ namespace SimplSockets
         public void Dispose()
         {
             // Close/dispose the socket
-            _socket.Close();
+            _socket.Dispose();
         }
 
         private void KeepAlive()
@@ -871,7 +871,7 @@ namespace SimplSockets
                 }
 
                 // Close / dispose the socket
-                socket.Close();
+                socket.Dispose();
             }
 
             // Remove receive buffer queue

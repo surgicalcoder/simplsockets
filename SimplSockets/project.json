@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0-*",
+
+    "dependencies": {
+        "System.Collections": "4.3.0",
+        "System.Linq": "4.3.0",
+        "System.Net.Sockets": "4.3.0",
+        "System.Runtime": "4.3.0",
+        "System.Runtime.Extensions": "4.3.0",
+        "System.Threading": "4.3.0",
+        "System.Threading.Thread": "4.3.0"
+    },
+
+    "frameworks": {
+        "net461": {},
+        "netcoreapp1.0": {
+            "imports": "dnxcore50"
+        }
+    },
+    "scripts": {
+        "postcompile": [
+            "dotnet pack --no-build --configuration %compile:Configuration%"
+        ]
+    },
+    "packOptions": {
+        "summary": "A port of the SimplSocket library to .NET core, with some changes",
+        "repository": {
+            "type": "git",
+            "url": "https://github.com/surgicalcoder/SimplSockets"
+        },
+        "owners": [ "surgicalcoder" ]
+    }
+}

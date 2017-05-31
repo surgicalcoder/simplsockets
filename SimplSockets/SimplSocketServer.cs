@@ -173,6 +173,22 @@ namespace SimplSockets
         }
 
         /// <summary>
+        /// Disconnects a client
+        /// </summary>
+        /// <param name="guid">Connection GUID of client</param>
+        public void Disconnect(Guid guid)
+        {
+            if (guid == Guid.Empty)
+            {
+                throw new ArgumentNullException(nameof(guid));
+            }
+
+            var client = _currentlyConnectedClients.FirstOrDefault(f => f.Guid == guid);
+
+            client?.Socket.Disconnect(true);
+        }
+
+        /// <summary>
         /// Sends a message directly to a client
         /// </summary>
         /// <param name="guid">Connection GUID of client</param>
@@ -352,7 +368,7 @@ namespace SimplSockets
             // Sanitize
             if (message == null)
             {
-                throw new ArgumentNullException("message");
+                throw new ArgumentNullException(nameof(message));
             }
             if (receivedMessage.Socket == null)
             {

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <VersionPrefix>2.0.0</VersionPrefix>
-    <TargetFrameworks>net461;netcoreapp1.0</TargetFrameworks>
+    <TargetFrameworks>net47</TargetFrameworks>
     <AssemblyName>SimplSockets</AssemblyName>
     <PackageId>SimplSockets</PackageId>
     <RepositoryType>git</RepositoryType>
@@ -11,6 +11,10 @@
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp1.1|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NET461</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

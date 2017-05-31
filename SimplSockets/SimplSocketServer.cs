@@ -184,7 +184,7 @@ namespace SimplSockets
             }
 
             var client = _currentlyConnectedClients.FirstOrDefault(f => f.Guid == guid);
-
+            
             client?.Socket.Disconnect(true);
         }
 
